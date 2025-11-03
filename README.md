@@ -5,10 +5,6 @@
 **SVR (Stereo Vision Reconstruction)** is a transformer-based framework for stereo image understanding, integrating multi-scale attention and intra-MLP reasoning for precise disparity and mask prediction.  
 Originally published in a **CVPR-grade study**, this project extends classical stereo super-resolution and segmentation methods toward **edge-deployable AI** via ONNX and TensorRT optimization.
 
-## ⚡️ Edge Deployment (ONNX / TensorRT)
-
-This repository now includes an **edge-ready export pipeline** for the **SVR** model — enabling deployment of the stereo transformer-based segmentation network on **NVIDIA Jetson**, **AGX Orin**, or **RTX Edge devices**.  
-The exported model focuses on the lightweight **mask prediction branch (`build_model2`)**, optimized for embedded inference while preserving the transformer reasoning structure.
 
 
 ![alt text](https://github.com/z65451/SVR/blob/main/model.jpg)
@@ -65,6 +61,11 @@ Run the following command to start testing:
 python3 main.py --train_or_test test
 ```
 
+
+## ⚡️ Edge Deployment (ONNX / TensorRT)
+
+This repository now includes an **edge-ready export pipeline** for the **SVR** model — enabling deployment of the stereo transformer-based segmentation network on **NVIDIA Jetson**, **AGX Orin**, or **RTX Edge devices**.  
+The exported model focuses on the lightweight **mask prediction branch (`build_model2`)**, optimized for embedded inference while preserving the transformer reasoning structure.
 
 ---
 
