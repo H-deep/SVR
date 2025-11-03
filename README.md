@@ -1,6 +1,9 @@
 # SVR
 
-Code for paper "Saliency-aware Stereoscopic Video Retargeting"
+### About
+
+**SVR (Stereo Vision Reconstruction)** is a transformer-based framework for stereo image understanding, integrating multi-scale attention and intra-MLP reasoning for precise disparity and mask prediction.  
+Originally published in a **CVPR-grade study**, this project extends classical stereo super-resolution and segmentation methods toward **edge-deployable AI** via ONNX and TensorRT optimization.
 
 ## ⚡️ Edge Deployment (ONNX / TensorRT)
 
