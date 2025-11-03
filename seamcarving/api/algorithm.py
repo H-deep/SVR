@@ -1,5 +1,5 @@
-from numpy import array, sqrt, max, zeros_like, int, argmin
-from scipy.signal import convolve2d, gaussian
+from numpy import array, sqrt, max, zeros_like, argmin
+from scipy.signal import convolve2d
 
 from collections import deque
 from sys import maxsize

@@ -1,5 +1,13 @@
 import os
 import torch
+try:
+    getattr(torch, "rfft")
+except AttributeError:
+    from legacy_fft import rfft as _rfft, irfft as _irfft
+    torch.rfft = _rfft
+    torch.irfft = _irfft
+
+import torch
 # from pycocotools import coco
 import queue
 import threading
@@ -39,7 +47,7 @@ if __name__ == '__main__':
     parser.add_argument('--lr_de',default=20000, help="learning rate decay")
     parser.add_argument('--batch_size',default=1, help="batch size")
     parser.add_argument('--group_size',default=4, help="group size")
-    parser.add_argument('--epochs',default=10000000, help="epoch")
+    parser.add_argument('--epochs',default=10, help="epoch")
     parser.add_argument('--train_datapath_small',default='datasets/15/small/training/', help="training dataset")
     parser.add_argument('--train_datapath_large',default='datasets/15/large/training/', help="training dataset")
     parser.add_argument('--val_datapath',default='DAVIS_FBMS_flow/DAVIS_FBMS_flow/', help="training dataset")

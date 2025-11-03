@@ -27,6 +27,31 @@ from loss_grad import GradientPenaltyLoss
 
 from PerceptualSimilarity.src.loss.loss_provider import LossProvider
 
+# import lpips
+# class LossProvider:
+#     """
+#     Minimal adapter so existing code that expects LossProvider still works.
+#     Usage later in code can stay as:
+#         lp = LossProvider('LPIPS', net='alex', use_gpu=True).get_loss_function()
+#     """
+#     def __init__(self, loss_name='LPIPS', net='alex', use_gpu=True, **kwargs):
+#         name = (loss_name or 'LPIPS').lower()
+#         # Map common names
+#         if name in ('lpips', 'lpips_alex', 'alex'):
+#             backbone = 'alex'
+#         elif name in ('lpips_vgg', 'vgg'):
+#             backbone = 'vgg'
+#         elif name in ('lpips_squeeze', 'squeeze'):
+#             backbone = 'squeeze'
+#         else:
+#             backbone = net if net in ('alex', 'vgg', 'squeeze') else 'alex'
+#         self.metric = lpips.LPIPS(net=backbone)
+#     def get_loss_function(self):
+#         # returns a callable matching your existing usage
+#         def _loss(x, y):
+#             # lpips expects 3-ch images in [-1, 1], NCHW torch tensors
+#             return self.metric(x, y).mean()
+#         return _loss
 
 import pytorch_ssim
 import torch.nn as nn
